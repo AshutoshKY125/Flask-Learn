@@ -7,7 +7,11 @@ app = Flask(__name__)
 def welcome():
     return "Hello its working"
 
+@app.route("/index")
+def index():
+    return ("this is index page")
+
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug = True)
