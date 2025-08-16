@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Flask App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: white;
+            background: #4CAF50;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .nav a:hover {
+            background: #45a049;
+        }
+        .message {
+            background: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Flask App</h1>
+    
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </div>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="message">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    
+    <p>This is a simple HTML page that works with Flask.</p>
+    <p>Features:</p>
+    <ul>
+        <li>Basic styling with CSS</li>
+        <li>Navigation links</li>
+        <li>Flash message display</li>
+        <li>Simple and clean design</li>
+    </ul>
+</body>
+</html>
