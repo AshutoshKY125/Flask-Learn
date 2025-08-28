@@ -1,31 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Flask GET/POST Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
         }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .description {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
         .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 35px;
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
         }
+        
         .btn:hover {
-            background-color: #45a049;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
+        }
+        
+        .btn i {
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            background: linear-gradient(to right, #f5f7fa, #e4e8f0);
+            border-radius: 15px;
+            padding: 25px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #4b6cb7;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .feature p {
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .btn {
+                padding: 15px 25px;
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Flask Form Demo</h1>
-    <p>Click the button below to access the form:</p>
-    <a href="/form" class="btn">Go to Form</a>
+    <div class="container">
+        <header>
+            <h1>Student Marks Portal</h1>
+            <p class="subtitle">A simple and efficient way to submit and manage your academic marks</p>
+        </header>
+        
+        <div class="content">
+            <p class="description">Click the button below to access the Marks Submission form and enter your academic results:</p>
+            
+            <a href="/form" class="btn">
+                <i class="fas fa-edit"></i> Go to Form
+            </a>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Easy Submission</h3>
+                    <p>Quickly submit your marks with our user-friendly form</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Tracking</h3>
+                    <p>Monitor your academic progress over time</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure & Private</h3>
+                    <p>Your academic data is kept secure and confidential</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Student Marks Portal | Powered by Flask</p>
+    </footer>
 </body>
 </html>
