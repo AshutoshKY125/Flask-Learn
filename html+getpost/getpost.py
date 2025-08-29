@@ -29,13 +29,13 @@ def result(results):
     Marks_obtained = results
     if Marks_obtained > 90:
         res = "Passed with grade S"
-    elif Marks_obtained > 80 and Marks_obtained <= 100:
-        res = "Passes with grade A"
     elif Marks_obtained > 80 and Marks_obtained <= 90:
-        res = "PASSED with grade B" 
+        res = "Passes with grade A"
     elif Marks_obtained > 70 and Marks_obtained <= 80:
+        res = "PASSED with grade B" 
+    elif Marks_obtained > 60 and Marks_obtained <= 70:
         res = "PASSED with grade C"
-    elif Marks_obtained >= 60 and Marks_obtained <= 100:
+    elif Marks_obtained >= 50 and Marks_obtained <= 100:
         res = "PASSED with grade D"
     elif Marks_obtained < 60 :
         res = "Failed"
