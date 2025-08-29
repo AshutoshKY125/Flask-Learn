@@ -21,9 +21,7 @@ def submit():
 
         perc = ((phy_mark+chem_mark+math_mark+eng_mark+pe_mark)/5)
 
-        return redirect (url_for('result', results = perc))
-    
-    
+        return redirect (url_for('result', results = perc))    
 
 @app.route('/result/<float:results>')
 def result(results):
@@ -45,8 +43,6 @@ def result(results):
     final = {'score':Marks_obtained,'result': res}
 
     return render_template('result.html', results = final)
-    #return render_template('result.html')
-
 
 if __name__ == "__main__":
     app.run(debug=True)
